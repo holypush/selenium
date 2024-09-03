@@ -1,9 +1,11 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.*;
+import io.qameta.allure.*;
 
 public class Test16 {
     private WebDriver driver;
@@ -20,6 +22,12 @@ public class Test16 {
     }
 
     @Test
+    @Owner("Попович Евгений")
+    @AllureId("001-1")
+    @DisplayName("Плейсхолдеры - Услуги связи")
+    @Description("Проверяет наличие надписей в незаполненных полях в разделе: Пополнение баланса - Услуги связи")
+    @Severity(SeverityLevel.NORMAL)
+
     public void testPlaceholdersUsligi() {
         // Ожидаемые надписи для незаполненных полей
         String expectedPhonePlaceholder = "Номер телефона";          
@@ -38,6 +46,12 @@ public class Test16 {
     }
 
     @Test
+    @Owner("Попович Евгений")
+    @AllureId("001-2")
+    @DisplayName("Плейсхолдеры - Домашний интернет")
+    @Description("Проверяет наличие надписей в незаполненных полях в разделе: Пополнение баланса - Домашний интернет")
+    @Severity(SeverityLevel.NORMAL)
+
     public void testPlaceholdersInternet() {
         
         String expectedPhonePlaceholder = "Номер абонента";          
@@ -56,6 +70,12 @@ public class Test16 {
     }
 
     @Test
+    @Owner("Попович Евгений")
+    @AllureId("001-3")
+    @DisplayName("Плейсхолдеры - Рассрочка")
+    @Description("Проверяет наличие надписей в незаполненных полях в разделе: Пополнение баланса - Рассрочка")
+    @Severity(SeverityLevel.NORMAL)
+
     public void testPlaceholdersInstalment() {
         
         String expectedPhonePlaceholder = "Номер счета на 44";          
@@ -74,6 +94,12 @@ public class Test16 {
     }
 
     @Test
+    @Owner("Попович Евгений")
+    @AllureId("001-4")
+    @DisplayName("Плейсхолдеры - Задолженность")
+    @Description("Проверяет наличие надписей в незаполненных полях в разделе: Пополнение баланса-Задолженность")
+    @Severity(SeverityLevel.NORMAL)
+
     public void testPlaceholdersArrears() {
         
         String expectedPhonePlaceholder = "Номер счета на 2073";          
@@ -92,6 +118,12 @@ public class Test16 {
     }
 
     @Test
+    @Owner("Попович Евгений")
+    @AllureId("002-1")
+    @DisplayName("Проверка всплывающего окна для оплаты услуг")
+    @Description("Вызов всплывающего окна для введения платежной информации и проверка основных его элементов")
+    @Severity(SeverityLevel.NORMAL)
+
     public void testPaymentProcess() {
         // Заполнение полей
         mainPage.uslugiPhone.sendKeys("297777777");
@@ -125,7 +157,6 @@ public class Test16 {
         assertTrue(mainPage.gpayButton.isDisplayed());
         assertTrue(mainPage.yandexButton.isDisplayed());
     }
-
 
     @AfterEach
     public void tearDown() {
